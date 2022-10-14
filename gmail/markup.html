@@ -1,0 +1,154 @@
+<div id="certalink">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="headerTitle">
+      CertaLink for noCRM
+    </div>
+    <div style="display: flex;">
+      <!-- Main menu dots -->
+      <svg id="mainMenu" width="24" height="24" viewBox="0 0 24 24" focusable="false" class="menuDots">
+        <path
+          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z">
+        </path>
+      </svg>
+    </div>
+    <button type="button" id="newLeadButton">
+      <div class="plusSign">+</div>New Lead
+    </button>
+  </div>
+
+  <!-- Menu Popup -->
+  <div id="menu">
+    <div class="menu" id="logout">Logout</div>
+    <hr>
+    <div class="menu" id="help"><a href="https://certalink.com/help-center">Help Center</a></div>
+    <hr>
+    <div class="menu" id="link"><a href="https://certalink.com" target="blank">certalink.com</a></div>
+    <hr>
+    <div class="menu" id="feedback"><a href="https://certalink.com/feedback" target="blank">Leave Feedback</a></div>
+  </div>
+
+  <!-- Login Form -->
+  <form id="loginBlock">
+    <p class="loginTitle">Sign in using your noCRM account</p>
+    <span id="loginError"></span>
+    <input id="loginMail" type="email" placeholder="Email" />
+    <input id="loginPassword" type="password" placeholder="Password" minlength="1" />
+    <br />
+    <button id="loginButton" type="submit">Sign in</button>
+    <div class="loginTerms" style="text-align: center;">
+      <p>By signing in you are agreeing to the Certalink</p>
+      <p><a href="https://certalink.com/terms-of-service/">Terms of Service</a></p>
+    </div>
+  </form>
+
+  <div id="contentView">
+    <div id="inboxView" style="display: none">
+
+      <!-- nextdeal panel -->
+      <div id="nextDeal">
+        <div class="nextDealHeader">
+          <div>
+            <img class="nextAction">
+            <div style="float:left">
+              Leads to do
+            </div>
+          </div>
+          
+          <div id="collapseTodo">-</div>
+          <div id="expandTodo">+</div>
+          <div class="nextCount"></div>
+        </div>
+        <div id="todonoLeads">
+
+        </div>
+
+        <!-- for next Deals -->
+        <div></div>
+      </div>
+
+      <!-- comming up panel -->
+      <div id="comingDeal">
+        <div class="comingDealHeader">
+          <div>
+            <img class="nextAction">
+            <div style="float:left">
+              Leads on Standby
+            </div>
+          </div>
+          
+          <div id="collapseStandby">-</div>
+          <div id="expandStandby">+</div>
+          <div class="comingCount"></div>
+        </div>
+
+        <div id="standbynoLeads">
+
+        </div>
+        <!-- for next Deals -->
+        <div></div>
+      </div>
+    </div>
+    <div id="messageView" style="display: block">
+
+    </div>
+  </div>
+
+  <!-- New Lead Form -->
+  <form id="newLeadForm">
+    <div class="comingSoon">Coming soon!</div>
+    <input id="leadName" type="text" placeholder="Lead Name" />
+    <!-- <input id="firstname" type="text" placeholder="First Name" />
+    <input id="lastName" type="text" placeholder="Last Name" />
+    <input id="phone" type="text" placeholder="Phone" />
+    <input id="email" type="text" placeholder="Email" /> -->
+    <textarea id="leadDescription" placeholder="Description" rows="10"></textarea>
+    <input id="leadTags" type="text" placeholder="Tags" />
+    <select id="leadStage" name="leadStage">
+      <option value="null">Select a stage</option>
+      <!-- <option value="Pipeline 1: Stage 1">Pipeline 1: Stage 1</option>
+      <option value="Pipeline 1: Stage 2">Pipeline 1: Stage 2</option>
+      <option value="Pipeline 1: Stage 3">Pipeline 1: Stage 3</option> -->
+    </select>
+    <div class="amount_prob">
+      <input id="leadAmount" type="text" placeholder="Amount" />
+      <input id="leadProbability" type="text" placeholder="Probability %" />
+    </div>
+    <br />
+    <button id="createLeadbtn" class="btn-createLead" type="submit">Create Lead</button>
+  </form>
+
+  <!-- <script>
+    const leadName = document.getElementById("leadName");
+    const leadDescription = document.getElementById("leadDescription");
+    const createLeadbtn = document.getElementById("createLeadbtn");
+    const leadAmount = document.getElementById("leadAmount");
+
+    createLeadbtn.addEventListener("click", () => {
+      const leadName = leadName.value;
+      const leadDescription = leadDescription.value;
+      const leadAmount = leadAmount.value;
+
+      axios.post("https://www.nocrm.io/api/v2/leads/", {
+        title: leadName,
+        firstname: leadDescription.firstname,
+        lastname : leadDescription.lastname,
+        phone : leadDescription.phone,
+        email : leadDescription.email,
+        Amount : leadAmount,
+
+      })
+        .then((response) => {
+          console.log(response);
+        });
+    });
+
+  </script> -->
+
+  <!-- Footer -->
+  <footer id="footerLogo" style="background: #F2F2F2;text-align: center;">
+    <p><a href="https://certalink.com/terms-of-service/">Terms of Service</a> | <a
+        href="https://certalink.com/privacy-policy/">Privacy Policy</a></p>
+  </footer>
+</div>
